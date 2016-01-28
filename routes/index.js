@@ -6,4 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post('/negative', function(req, res) {
+    var x = req.body;
+    eval(x + 3);
+    res.send('Hello World');
+});
+
+
+
 module.exports = router;
