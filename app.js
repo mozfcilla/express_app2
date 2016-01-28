@@ -35,6 +35,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+app.post('/negative', function(req, res) {
+    var x = req.body;
+    eval(x + 3);
+    res.send('Hello World');
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
