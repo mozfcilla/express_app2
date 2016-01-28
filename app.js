@@ -14,7 +14,10 @@ app.disable('X-Powered-By');
 
 
 app.use(expressSession({
-  secret: 'keyboard cat'
+  secret: 'keyboard cat',
+  cookie: {
+    httpOnly: true
+  }
 }));
 
 // view engine setup
